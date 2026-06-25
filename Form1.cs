@@ -26,7 +26,8 @@ namespace SistemaTaquillaCine
 
         private void tipoBoleto() {
             int indice = cbmTipoBoleto.SelectedIndex;
-            switch (indice) {
+            switch (indice)
+            {
                 case 0:
                     //general
                     lblExtra.Visible = false;
@@ -44,11 +45,30 @@ namespace SistemaTaquillaCine
                     lblExtra.Text = "Matricula:";
                     txtExtra.Visible = true;
                     break;
+            
             }
+            
+        }
+        private void Calcularprecio()
+        {
+            int indice = cbmTipoBoleto.SelectedIndex;
+            switch (indice)
+            {
+                case 1: // adulto mayor
+                {
+                        BoletoAdultoMayor adulto = new BoletoAdultoMayor(50, txtExtra.Text);
+                        lblCosto.Text = adulto.calcularPrecioFinal().ToString();
+                        break;
+                }
+                    
+            }
+            
         }
         private void cbmTipoBoleto_SelectedIndexChanged(object sender, EventArgs e)
         {
             tipoBoleto();
+            Calcularprecio();
         }
+        
     }
 }
