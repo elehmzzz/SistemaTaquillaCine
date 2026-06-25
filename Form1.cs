@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaTaquillaCine.Clases;
 
 namespace SistemaTaquillaCine
 {
@@ -33,11 +34,11 @@ namespace SistemaTaquillaCine
                     lblExtra.Visible = false;
                     txtExtra.Visible = false;
 
-                    // 1. Instanciamos tu clase usando la ruta completa del namespace
-                    SistemaTaquillaCine.Clases.BoletoGeneral boletoG = new SistemaTaquillaCine.Clases.BoletoGeneral(precioBaseEstandar);
-                    
+                    BoletoGeneral boletoG = new BoletoGeneral(precioBaseEstandar);
+
                     // 2. Calculamos el precio final y lo mostramos formateado con dos decimales
                     lblCosto.Text = boletoG.calcularPrecioFinal().ToString("0.00");
+
                     break;
                 case 1:
                     //adulto mayor
