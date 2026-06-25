@@ -26,11 +26,18 @@ namespace SistemaTaquillaCine
 
         private void tipoBoleto() {
             int indice = cbmTipoBoleto.SelectedIndex;
+            float precioBaseEstandar = 50.00f; // Precio base para el boleto estandar
             switch (indice) {
                 case 0:
                     //general
                     lblExtra.Visible = false;
                     txtExtra.Visible = false;
+
+                    // 1. Instanciamos tu clase usando la ruta completa del namespace
+                    SistemaTaquillaCine.Clases.BoletoGeneral boletoG = new SistemaTaquillaCine.Clases.BoletoGeneral(precioBaseEstandar);
+                    
+                    // 2. Calculamos el precio final y lo mostramos formateado con dos decimales
+                    lblCosto.Text = boletoG.calcularPrecioFinal().ToString("0.00");
                     break;
                 case 1:
                     //adulto mayor
