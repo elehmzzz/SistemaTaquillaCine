@@ -35,8 +35,10 @@ namespace SistemaTaquillaCine
                     txtExtra.Visible = false;
 
                     BoletoGeneral boletoG = new BoletoGeneral(precioBaseEstandar);
+
                     // 2. Calculamos el precio final y lo mostramos formateado con dos decimales
                     lblCosto.Text = boletoG.calcularPrecioFinal().ToString("0.00");
+
                     break;
                 case 1:
                     //adulto mayor
