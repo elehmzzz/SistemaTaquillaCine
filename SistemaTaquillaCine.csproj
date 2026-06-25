@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\BoletoEstudiante.cs" />
     <Compile Include="Clases\BoletoGeneral.cs" />
     <Compile Include="Clases\clsBoleto.cs" />
     <Compile Include="Form1.cs">
