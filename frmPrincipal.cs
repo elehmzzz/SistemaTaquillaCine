@@ -28,6 +28,7 @@ namespace SistemaTaquillaCine
 
         private void tipoBoleto() {
             int indice = cbmTipoBoleto.SelectedIndex;
+            
             float precioBaseEstandar = 80.00f; // Precio base para el boleto estandar
             switch (indice) {
                 case 0:
@@ -56,12 +57,31 @@ namespace SistemaTaquillaCine
                     lblDescuento.Visible = true; // CAMBIO ALEXA: MUESTRA EL DESCUENTO
                     lblDescuento.Text = "30% de descuento estudiante";                   
                     break;
+            
             }
+            
+        }
+        private void Calcularprecio()
+        {
+            int indice = cbmTipoBoleto.SelectedIndex;
+            switch (indice)
+            {
+                case 1: // adulto mayor
+                {
+                        BoletoAdultoMayor adulto = new BoletoAdultoMayor(50, txtExtra.Text);
+                        lblCosto.Text = adulto.calcularPrecioFinal().ToString();
+                        break;
+                }
+                    
+            }
+            
         }
         private void cbmTipoBoleto_SelectedIndexChanged(object sender, EventArgs e)
         {
             tipoBoleto();
+            Calcularprecio();
         }
+
         // CAMBIO ALEXA: EVENTO DEL BOTÓN CALCULAR
         private void btnCalcular_Click(object sender, EventArgs e)
         {
@@ -84,7 +104,7 @@ namespace SistemaTaquillaCine
             }
             else if (indice == 1)
             {
-                //boleto = new BoletoAdultoMayor(precioBase, extra);
+                boleto = new BoletoAdultoMayor(precioBase, extra);
             }
             else if (indice == 2)
             {
