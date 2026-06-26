@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaTaquillaCine
+namespace SistemaTaquillaCine.Clases
 {
     internal class BoletoAdultoMayor: clsBoleto
     {
@@ -17,7 +17,8 @@ namespace SistemaTaquillaCine
 
         public override float calcularPrecioFinal()
         {
-            return  precioBase * 0.5f;
+            return precioBase * 0.5f;
+
         }
     }
 }

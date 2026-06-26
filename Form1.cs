@@ -104,7 +104,7 @@ namespace SistemaTaquillaCine
             }
             else if (indice == 1)
             {
-                //boleto = new BoletoAdultoMayor(precioBase, extra);
+                boleto = new BoletoAdultoMayor(precioBase, extra);
             }
             else if (indice == 2)
             {
