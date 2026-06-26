@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaTaquillaCine
+namespace SistemaTaquillaCine.Clases
 {
     internal class BoletoAdultoMayor: clsBoleto
     {
