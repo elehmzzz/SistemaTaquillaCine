@@ -17,7 +17,8 @@ namespace SistemaTaquillaCine.Clases
 
         public override float calcularPrecioFinal()
         {
-            return  precioBase * 0.5f;
+            return precioBase * 0.5f;
+
         }
     }
 }
